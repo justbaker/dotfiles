@@ -6,11 +6,14 @@ set encoding=utf-8
 execute pathogen#infect()
 filetype plugin indent on
 syntax enable
+
 " Always show line numbers
 set number
 set textwidth=80
 
-colorscheme guero
+colorscheme lucario
+" Available Themes:
+" lucario
 
 " **************** CONVENIENCE MAPPINGS ************
 " Set the leader key to comma (normally, it's "\")
@@ -58,27 +61,12 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab " insert spaces instead of tab characters
-"set smarttab  " backspace over a tab will remove a tab's worth of space
 
 " *********** DISPLAYING HIDDEN CHARACTERS *********
 " Beautify display of hidden characters (tabs, line breaks, etc).
 " (`:set list!` to toggle display; `:help listchars` for info )
 " set listchars=nbsp:☠,trail:⋅,tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set listchars=trail:⋅,tab:▸\ ,eol:¬,extends:❯,precedes:❮
-
-" ************ CtrlP (File Finder) ****************
-" - Pressing <control + p> starts it.
-" - <ctrl + j/k> moves between matches.
-" - Enter opens. <ctrl + t> opens in same tab (with config below).
-" - ctrl+f changes modes. MRU means 'Most Recently Used'. 
-" - <ctrl + r> toggles regexp/fuzzy search; regexp is also nice for exact filenames
-"
-" Open a single file in a new tab by default
-let g:ctrlp_prompt_mappings = {'AcceptSelection("e")': ['<c-t>'], 'AcceptSelection("t")': ['<cr>', '2-LeftMouse'], }
-" Open new files in a new tab
-let g:ctrlp_open_new_file = 't'
-" Open multiple files in new tabs and jump to the first one
-let g:ctrlp_open_multiple_files = 'tj'
 
 " From Nathan's section of the gvim
 
@@ -96,26 +84,24 @@ imap <S-Tab> <BS>
 nmap <C-J> :m +1 <CR>
 nmap <C-K> :m -2 <CR>
 
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
-
-" Visually select the text that was last edited/pasted with 'gV'
-" (This is based on the standard 'gv', which repeats the last selection)
-nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
-
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
+
 let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0
 
 " Ctrl+A start of line CTRL+E end of line
 "
@@ -126,13 +112,49 @@ inoremap <C-a> <Esc>I
 " Command Mode
 nnoremap <C-e> <End>
 nnoremap <C-a> <Home>
+
 " CTRL+x to copy in visual mode
 " CTRL+V to paste in visual mode
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+
+" Copy current file to clipboard
+vmap <C-i> :!cat % \| pbcopy
+nnoremap <C-i> :!cat % \| pbcopy
 
 " Spellcheck markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Set highlight mode for Capfiles,Gemfiles, and Rakefiles
 au BufRead,BufNewFile Capfile,Gemfile,Rakefile,*.rake,*.cap set filetype=ruby
+
+" Set json indent to 4 space
+"
+au BufRead,BufNewFile *.json set filetype=json
+autocmd Filetype json setlocal ts=4 sw=4 sts=0 expandtab
+
+"
+" Java specific vim config. This assumes java 7 or greater, and that
+" https://github.com/artur-shaik/vim-javacomplete2 is installed.
+"
+
+" Configure java to use config file for classpaths
+let g:syntastic_java_javac_config_file_enabled = 1
+
+" 4 Spaces for java!
+autocmd Filetype java setlocal ts=4 sw=4 sts=0 expandtab
+
+" Enable java autocomplete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" Add missing imports w/ F6
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+" Remove unneeded imports w/ F7
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+let g:syntastic_mode_map = { "mode": "active",
+                           \ "active_filetypes": [],
+                           \ "passive_filetypes": ["scala"] }
