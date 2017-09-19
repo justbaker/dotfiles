@@ -20,7 +20,7 @@ With wget:
 The provided `vimrc` file contains a list of available vim themes.
 
 Available Themes:
--------------------
+
 - atom
 - getafe
 - github
