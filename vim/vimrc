@@ -11,9 +11,16 @@ syntax enable
 set number
 set textwidth=80
 
-colorscheme lucario
+" Active Theme:
+colorscheme muon
+
 " Available Themes:
-" lucario
+" colorscheme atom
+" colorscheme getafe
+" colorscheme github
+" colorscheme inkpot
+" colorscheme lucario
+" colorscheme muon
 
 " **************** CONVENIENCE MAPPINGS ************
 " Set the leader key to comma (normally, it's "\")

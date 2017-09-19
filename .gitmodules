@@ -28,12 +28,21 @@
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = git@github.com:vim-scripts/tComment.git
-[submodule "vim/bundle/railscasts"]
-	path = vim/bundle/railscasts
-	url = git@github.com:jpo/vim-railscasts-theme.git
-[submodule "vim/bundle/colorschemes"]
-	path = vim/bundle/colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim/bundle/lucario"]
 	path = vim/bundle/lucario
 	url = https://github.com/raphamorim/lucario
+[submodule "vim/bundle/atom-theme"]
+	path = vim/bundle/atom-theme
+	url = https://github.com/gregsexton/Atom
+[submodule "vim/bundle/inkpot"]
+	path = vim/bundle/inkpot
+	url = https://github.com/ciaranm/inkpot
+[submodule "vim/bundle/getafe-theme"]
+	path = vim/bundle/getafe-theme
+	url = https://github.com/larssmit/vim-getafe
+[submodule "vim/bundle/github-theme"]
+	path = vim/bundle/github-theme
+	url = https://github.com/acarapetis/vim-colors-github
+[submodule "vim/bundle/muon-theme"]
+	path = vim/bundle/muon-theme
+	url = https://github.com/gregsexton/Muon
