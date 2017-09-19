@@ -19,15 +19,40 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule "vim/powerline"]
-	path = vim/powerline
-	url = git@github.com:Lokaltog/powerline.git
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = git@github.com:Lokaltog/powerline.git
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = git@github.com:vim-scripts/tComment.git
+	url = git@github.com:jpo/vim-railscasts-theme.git
+[submodule "vim/bundle/gradle-syntastic-plugin"]
+	path = vim/bundle/gradle-syntastic-plugin
+	url = https://github.com/Scuilion/gradle-syntastic-plugin
+[submodule "vim/bundle/kotlin-vim"]
+	path = vim/bundle/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim
+[submodule "vim/bundle/vim-better-whitespace"]
+	path = vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule "vim/bundle/vim-javacomplete2"]
+	path = vim/bundle/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
 [submodule "vim/bundle/lucario"]
 	path = vim/bundle/lucario
 	url = https://github.com/raphamorim/lucario
