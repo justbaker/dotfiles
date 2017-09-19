@@ -14,3 +14,16 @@ With curl:
 With wget:
 
 `sh -c "$(wget https://raw.githubusercontent.com/justbaker/dotfiles/master/tools/install.sh -o -)"`
+
+## Themes
+
+The provided `vimrc` file contains a list of available vim themes.
+
+Available Themes:
+-------------------
+- atom
+- getafe
+- github
+- inkpot
+- lucario
+- muon
