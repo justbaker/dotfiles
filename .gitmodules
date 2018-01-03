@@ -13,9 +13,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule "vim/bundle/flavored-markdown"]
-	path = vim/bundle/flavored-markdown
-	url = git@github.com:jtratner/vim-flavored-markdown.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
